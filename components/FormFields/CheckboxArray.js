@@ -25,7 +25,7 @@ const CheckboxArray = ({ disabled, input, options = [] }) => {
         [styles.checkboxOptions__isExpanded]: isExpanded
       })}>
         {options.map(({ label, value }) => (
-          <div className={styles.checkboxWrapper}>
+          <div key={value} className={styles.checkboxWrapper}>
             <input type="checkbox"
                 className={styles.checkboxInput}
                 checked={input.value.indexOf(value) !== -1}
