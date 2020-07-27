@@ -1,0 +1,15 @@
+@import 'scss/base';
+
+.productGrid {
+  max-width: $content-width;
+  padding: 0 1.5rem;
+  width: 100%;
+
+  @include breakpoint($breakpoint-md) {
+    display: grid;
+    margin: 0 auto;
+    padding: 0 2.8rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 6.66%;
+  }
+}

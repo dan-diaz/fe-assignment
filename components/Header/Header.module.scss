@@ -1,0 +1,22 @@
+@import 'scss/base';
+
+.header {
+  width: 100%;
+  max-width: $content-width;
+  margin: 6rem auto 3rem;
+  padding: 0 1.5rem;
+}
+
+.title {
+  margin-bottom: 2.5rem;
+  
+  @include breakpoint($breakpoint-md) {
+    font-size: 4rem;
+  }
+}
+
+.objective {
+  @include breakpoint($breakpoint-md) {
+    font-size: 2rem;
+  }
+}

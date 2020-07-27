@@ -1,0 +1,48 @@
+@import 'scss/base';
+
+.button {
+  background-color: $gray-f5;
+  border: 1px solid $gray-97;
+  color: $green;
+  cursor: pointer;
+  display: flex;
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  height: 4.8rem;
+  justify-content: center;
+  align-items: center;
+  min-width: 15.6rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color $animationSpeed;
+
+  &:hover {
+    background-color: $gray-f0;
+  }
+
+  &:disabled {
+    background-color: $gray-f5;
+    border-color: $gray-f5;
+    color: $gray-9b;
+    cursor: default;
+  }
+}
+
+.buttonAlternate {
+  background: $white;
+
+  &:hover {
+    background-color: $gray-f5;
+  }
+  &:disabled {
+    background: $white;
+    border: 1px solid rgba($gray-9b, 0.5);
+  }
+}
+.buttonBlue {
+  background-color: $gray-fb;
+  border-color: $gray-f0;
+  color: $blue;
+}

@@ -1,0 +1,50 @@
+@import 'scss/base';
+
+.accordion {
+  border-bottom: 1px solid $gray-f0;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding-left: .3rem;
+  transition: margin-bottom $animationSpeed
+}
+
+.accordion__isExpanded {
+  border-bottom: none;
+  margin-bottom: 2.5rem;
+}
+.header {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  font-weight: $font-weight-medium;
+  height: 4.5rem;
+  margin: 0;
+
+  &:after {
+    color: $gray-9b;
+    font-size: 2rem;
+    font-weight: $font-weight-medium;
+  }
+}
+.header__isCollapsed {
+  &:after {
+    content: '+';
+  }
+}
+.header__isExpanded {
+  &:after {
+    content: '—';
+  }
+}
+.content {
+  overflow: hidden;
+  transition: max-height $animationSpeed;
+  max-height: 0;
+}
+
+.content__isExpanded {
+  max-height: 100vh
+}
