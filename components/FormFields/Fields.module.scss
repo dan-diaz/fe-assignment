@@ -1,0 +1,168 @@
+@import 'scss/base';
+
+.fieldWrapper {
+  margin-bottom: 2.5rem;
+  @include breakpoint($breakpoint-md) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+.fieldWrapper__label {
+  font-size: 1.5rem;
+  font-weight: $font-weight-bold;
+  margin-bottom: 1rem;
+  @include breakpoint($breakpoint-md) {
+    margin: 0 1.4rem 0 0;
+  }
+  
+}
+.checkboxArray {
+  @include breakpoint($breakpoint-md) {
+    background-color: $white;
+    position: relative;
+    width: 25rem;
+
+    &:after {
+      content: '';
+      display: block;
+      background: center no-repeat url(/images/arrow.png);
+      width: 1.7rem;
+      height: 1.7rem;
+      transition: transform $animationSpeed;
+      position: absolute;
+      top: calc(50% - 0.85rem);
+      right: 1.4rem;
+      transform-origin: center;
+      pointer-events: none;
+    }
+
+
+  }
+}
+
+.checkboxCount {
+  display: none;
+  @include breakpoint($breakpoint-md) {
+    background-color: $white;
+    border: 1px solid $gray-cc;
+    border-radius: 0;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 1.4rem;
+    text-align: left;
+
+    &:focus {
+      outline: 1px solid $green;
+    }
+  }
+}
+
+.checkboxOptions {
+  @include breakpoint($breakpoint-md) {
+    background-color: $white;
+    border: 1px solid $gray-cc;
+    border-top: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: -1px;
+    padding: 1.4rem;
+    width: 100%;
+    overflow: hidden;
+    transition: opacity $animationSpeed, top $animationSpeed;
+    opacity: 0;
+    pointer-events: none;
+
+    label, input[type=checkbox] {
+      cursor: pointer;
+    }
+  }
+}
+
+.checkboxOptions__isExpanded {
+  opacity: 1;
+  pointer-events: auto;
+  top: 100%;
+}
+
+.checkboxWrapper {
+  display: flex;
+  align-items: center;
+  padding: .5rem 0;
+}
+
+.checkboxLabel {
+  cursor: pointer;
+  position: relative;
+  padding-left: 2.6rem;
+
+  &:before {
+    border: 1px solid $gray-9b;
+    border-radius: 3px;
+    content: '';
+    display: block;
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  &:after {
+    background: center no-repeat url(/images/checkmark.png);
+    content: '';
+    display: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+  }
+}
+
+.checkboxInput {
+  margin: 0 1rem 0 0;
+  position: absolute;
+  left: -9999rem;
+  
+  &:checked ~ .checkboxLabel:after {
+    display: block;
+
+  }
+}
+
+.select {
+  background: no-repeat url(/images/arrow.png) $white;
+  background-position: right 1.4rem center;
+  border: 1px solid $gray-cc;
+  cursor: pointer;
+  height: 4.5rem;
+  padding: 1.4rem;
+  position: relative;
+  width: 25rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+
+  &:focus {
+    outline: 1px solid $green;
+  }
+  &:after {
+    content: '';
+    display: block;
+    background: center no-repeat url(/images/arrow.png);
+    width: 1.7rem;
+    height: 1.7rem;
+    transition: transform $animationSpeed;
+    position: absolute;
+    top: calc(50% - 0.85rem);
+    right: 1.4rem;
+    transform-origin: center;
+    pointer-events: none;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
